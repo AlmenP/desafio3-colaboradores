@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { dataInicial } from "../data";
+import { data } from "../data";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Lista = () => {
-    const [data, setData] = useState (dataInicial) 
-    const [nombre, setNombre] = useState ("")
-    const [email, setEmail] = useState ("")
+    const [dataCollab, setDataCollab] = useState (data) 
+    const [nombreNewCollab, setNombre] = useState ("")
+    const [emailNewCollab, setEmail] = useState ("")
     const [buscar, setBuscar] = useState ("")
     const [contenido, setContenido] = useState (data)
 
@@ -15,24 +15,24 @@ const Lista = () => {
         e.preventDefault()
         console.log(buscar) 
         const resultado = contenido.filter((item)=>{
-            return item.nombre.toLowerCase() === buscar.toLowerCase()
+            return item.nombre.toLowerCase().includes(buscar.toLowerCase());
         })
 
         console.log(resultado)
         console.log(contenido)
-        setData(resultado)
+        setDataCollab(resultado)
     }
 
     const agregar = (e) => {
         e.preventDefault()
-        setData([...data, {id: data.length + 1, nombre, email}])
+        setDataCollab([...dataCollab, {id: data.length + 1, nombre: nombreNewCollab, email: emailNewCollab}])
     
-        setContenido([...data, {id: data.length + 1, nombre, email}])
+        setContenido([...data, {id: data.length + 1, nombre: nombreNewCollab, email: emailNewCollab}])
 
     }
 
     const renderColaboradores = () => {
-        return data.map((tarea) => (
+        return dataCollab.map((tarea) => (
           <li key={tarea.nombre} onClick={() => console.log(tarea)}>
             {" "}
             {tarea.nombre} - {tarea.email}{" "}
