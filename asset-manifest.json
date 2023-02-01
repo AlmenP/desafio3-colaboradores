@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/desafio3-colaboradores/static/css/main.07ac4a3b.css",
+    "main.js": "/desafio3-colaboradores/static/js/main.017af875.js",
+    "index.html": "/desafio3-colaboradores/index.html",
+    "main.07ac4a3b.css.map": "/desafio3-colaboradores/static/css/main.07ac4a3b.css.map",
+    "main.017af875.js.map": "/desafio3-colaboradores/static/js/main.017af875.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07ac4a3b.css",
+    "static/js/main.017af875.js"
+  ]
+}
